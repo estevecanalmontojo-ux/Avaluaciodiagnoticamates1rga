@@ -3,104 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pla de Reforç de Matemàtiques - Gestió Administrativa</title>
+    <title>Pla de Reforç Integral de Matemàtiques - Gestió Administrativa</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans min-h-screen p-4 md:p-8">
 
-    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
         
         <!-- Header -->
         <div class="bg-indigo-600 text-white p-6 md:p-8">
             <span class="bg-indigo-500 text-xs uppercase tracking-wider px-3 py-1 rounded-full font-semibold">1r Gestió Administrativa</span>
-            <h1 class="text-2xl md:text-3xl font-bold mt-2">Pla de Reforç i Autopràctica de Matemàtiques</h1>
-            <p class="text-indigo-100 mt-1">Repassa els conceptes clau de l'avaluació diagnòstica amb exercicis pràctics i autocorrecció.</p>
+            <h1 class="text-2xl md:text-3xl font-bold mt-2">Pla de Reforç Integral: Avaluació Diagnòstica</h1>
+            <p class="text-indigo-100 mt-1">Repassa tots els blocs de l'examen amb explicacions pràctiques, llibreta de càlcul integrada i autocorrecció.</p>
         </div>
 
-        <div class="p-6 md:p-8 space-y-10">
+        <div class="p-6 md:p-8 space-y-12">
 
-            <!-- BLOQ 1: PERCENTATGES INVERSOS -->
-            <section class="border-b pb-8">
-                <div class="flex items-center space-x-3 mb-4">
-                    <span class="bg-indigo-100 text-indigo-700 font-bold w-8 h-8 rounded-full flex items-center justify-center">1</span>
-                    <h2 class="text-xl font-bold text-slate-700">Càlcul Invers de Percentatges (Preus sense IVA)</h2>
-                </div>
-                
-                <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-4 text-sm text-amber-800 rounded-r-lg">
-                    <strong>Atenció al error comú:</strong> Per treure l'IVA d'un producte <strong>no s'ha de restar el 21%</strong> directament sobre el total. S'ha de dividir el preu total entre $1,21$ (ja que el preu inclou $1 + 0,21$).
-                </div>
+            <!-- ================= PART 1: CÀLCUL BÀSIC ================= -->
+            <div>
+                <h2 class="text-2xl font-black text-indigo-900 border-b-2 border-indigo-200 pb-2 mb-6">Part 1: Càlcul Bàsic i Percentatges</h2>
 
-                <div class="bg-slate-50 p-4 rounded-xl border space-y-4">
-                    <p class="font-medium text-slate-700">Exercici 1: Un article té un preu de <strong>121 euros</strong> (IVA inclòs del 21%). Quin era el preu del producte sense IVA?</p>
+                <!-- Exercici 1.1 -->
+                <div class="bg-slate-50 p-5 rounded-xl border mb-6 space-y-4">
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Percentatges (Descomptes)</span>
+                    <p class="font-medium text-slate-700">1. Un producte té un preu de <strong>50 euros</strong>. Si s'aplica un descompte del <strong>20%</strong>, quin és el preu final del producte?</p>
                     
-                    <!-- Llibreta d'apunts per a l'alumne -->
                     <div>
-                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament (pista per a tu):</label>
-                        <textarea class="w-full h-20 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Escriu aquí com has plantejat la regla de tres o l'operació..."></textarea>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
+                        <textarea class="w-full h-16 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Calcula el descompte i resta'l..."></textarea>
                     </div>
 
                     <div class="flex flex-col sm:flex-row items-center gap-3">
-                        <input type="number" id="ans1" placeholder="El teu resultat (€)" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        <button onclick="checkAnswer(1, 100)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <input type="number" step="0.01" id="ans1" placeholder="Preu final (€)" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(1, 40)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
                         <span id="feedback1" class="font-bold text-sm"></span>
                     </div>
                 </div>
-            </section>
 
-            <!-- BLOQ 2: PROPORCIONALITAT INVERSA -->
-            <section class="border-b pb-8">
-                <div class="flex items-center space-x-3 mb-4">
-                    <span class="bg-indigo-100 text-indigo-700 font-bold w-8 h-8 rounded-full flex items-center justify-center">2</span>
-                    <h2 class="text-xl font-bold text-slate-700">Regla de Tres Inversa (Gestió de Temps)</h2>
-                </div>
-                
-                <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-4 text-sm text-amber-800 rounded-r-lg">
-                    <strong>Recorda:</strong> Si treballem menys hores al dia, necessitarem <strong>més dies</strong> per acabar el mateix projecte (magnituds inversament proporcionals). Multiplica les hores totals inicials i divideix per les noves hores.
-                </div>
-
-                <div class="bg-slate-50 p-4 rounded-xl border space-y-4">
-                    <p class="font-medium text-slate-700">Exercici 2: Un equip triga <strong>60 dies</strong> treballant <strong>8 hores al dia</strong> en completar un projecte. Quants dies necessitaran si només treballen <strong>6 hores al dia</strong>?</p>
+                <!-- Exercici 1.2 -->
+                <div class="bg-slate-50 p-5 rounded-xl border mb-6 space-y-4">
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Percentatges (Càlcul de part)</span>
+                    <p class="font-medium text-slate-700">2. En una enquesta, el <strong>65%</strong> dels participants van respondre que sí. Si hi ha hagut un total de <strong>200 participants</strong>, quants van respondre que sí?</p>
                     
                     <div>
                         <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
-                        <textarea class="w-full h-20 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Apunta aquí el càlcul d'hores totals..."></textarea>
+                        <textarea class="w-full h-16 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Multiplica el total pel tant per cent..."></textarea>
                     </div>
 
                     <div class="flex flex-col sm:flex-row items-center gap-3">
-                        <input type="number" id="ans2" placeholder="Nombre de dies" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        <button onclick="checkAnswer(2, 80)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <input type="number" id="ans2" placeholder="Nombre de persones" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(2, 130)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
                         <span id="feedback2" class="font-bold text-sm"></span>
                     </div>
                 </div>
-            </section>
 
-            <!-- BLOQ 3: ESTADÍSTICA BÀSICA -->
-            <section class="pb-4">
-                <div class="flex items-center space-x-3 mb-4">
-                    <span class="bg-indigo-100 text-indigo-700 font-bold w-8 h-8 rounded-full flex items-center justify-center">3</span>
-                    <h2 class="text-xl font-bold text-slate-700">Mitjana Aritmètica de Vendes</h2>
-                </div>
-
-                <div class="bg-slate-50 p-4 rounded-xl border space-y-4">
-                    <p class="font-medium text-slate-700">Exercici 3: Durant 4 dies d'una setmana, una botiga ha registrat les següents vendes diàries: <strong>120, 150, 200 i 130</strong> unitats. Quina és la mitjana de vendes diàries?</p>
+                <!-- Exercici 1.3 -->
+                <div class="bg-slate-50 p-5 rounded-xl border mb-6 space-y-4">
+                    <div class="bg-amber-50 border-l-4 border-amber-400 p-3 mb-2 text-xs text-amber-800 rounded-r-lg">
+                        <strong>Atenció (IVA Invers):</strong> Per treure l'IVA del 21%, no restis el 21% directament. Divideix el preu total entre $1,21$.
+                    </div>
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Percentatges (Càlcul Invers - IVA)</span>
+                    <p class="font-medium text-slate-700">3. Un article té un preu de <strong>42 euros amb IVA inclòs</strong> (21%). Quin és el preu del producte <strong>sense IVA</strong>? *(Arrodoneix a 2 decimals)*</p>
                     
                     <div>
                         <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
-                        <textarea class="w-full h-20 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Suma total i divisió..."></textarea>
+                        <textarea class="w-full h-16 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Planteja la divisió entre 1,21..."></textarea>
                     </div>
 
                     <div class="flex flex-col sm:flex-row items-center gap-3">
-                        <input type="number" id="ans3" placeholder="Mitjana obtinguda" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        <button onclick="checkAnswer(3, 150)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <input type="number" step="0.01" id="ans3" placeholder="Preu sense IVA (€)" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(3, 34.71)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
                         <span id="feedback3" class="font-bold text-sm"></span>
                     </div>
                 </div>
-            </section>
+
+                <!-- Exercici 1.4 -->
+                <div class="bg-slate-50 p-5 rounded-xl border mb-6 space-y-4">
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Percentatges (Augment anterior)</span>
+                    <p class="font-medium text-slate-700">4. Una empresa ha augmentat les vendes un <strong>15%</strong> respecte a l'any anterior. Si enguany ha venut <strong>100.000 €</strong>, quantes vendes va realitzar l'any passat? *(Arrodoneix a l'enter més proper)*</p>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
+                        <textarea class="w-full h-16 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Divideix 100.000 entre 1,15..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <input type="number" id="ans4" placeholder="Vendes any anterior (€)" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(4, 86957)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <span id="feedback4" class="font-bold text-sm"></span>
+                    </div>
+                </div>
+
+                <!-- Exercici 1.5 -->
+                <div class="bg-slate-50 p-5 rounded-xl border mb-6 space-y-4">
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Proporcionalitat i Regla de Tres</span>
+                    <p class="font-medium text-slate-700">5. Si <strong>3 kg de pomes costen 12 euros</strong>, quant costaran <strong>5 kg</strong> de pomes?</p>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
+                        <textarea class="w-full h-16 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Regla de tres directa..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <input type="number" step="0.01" id="ans5" placeholder="Preu (€)" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(5, 20)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <span id="feedback5" class="font-bold text-sm"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= PART 2: RESOLUCIÓ DE PROBLEMES ================= -->
+            <div>
+                <h2 class="text-2xl font-black text-indigo-900 border-b-2 border-indigo-200 pb-2 mb-6">Part 2: Resolució de Problemes Contextualitzats</h2>
+
+                <!-- Exercici 2.1 -->
+                <div class="bg-slate-50 p-5 rounded-xl border mb-6 space-y-4">
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Gestió d'Inventari i Vendes</span>
+                    <p class="font-medium text-slate-700">6. Una botiga té <strong>120 samarretes</strong>. Ven el <strong>40% a 15 €</strong> cadascuna, i la resta al preu habitual de <strong>20 €</strong>. Quins ingressos totals obté?</p>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
+                        <textarea class="w-full h-16 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Calcula quantes a 15€ i quantes a 20€..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <input type="number" id="ans6" placeholder="Ingressos totals (€)" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(6, 2160)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <span id="feedback6" class="font-bold text-sm"></span>
+                    </div>
+                </div>
+
+                <!-- Exercici 2.2 -->
+                <div class="bg-slate-50 p-5 rounded-xl border mb-6 space-y-4">
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Costos d'Impressió</span>
+                    <p class="font-medium text-slate-700">7. Una empresa necessita imprimir <strong>500 còpies</strong> d'un document de <strong>20 pàgines</strong>. Si costa <strong>0,02 € per pàgina impresa</strong>, quin serà el cost total?</p>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
+                        <textarea class="w-full h-16 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Calcula el total de pàgines i multiplica pel cost..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <input type="number" step="0.01" id="ans7" placeholder="Cost total (€)" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(7, 200)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <span id="feedback7" class="font-bold text-sm"></span>
+                    </div>
+                </div>
+
+                <!-- Exercici 2.3 -->
+                <div class="bg-slate-50 p-5 rounded-xl border mb-6 space-y-4">
+                    <div class="bg-amber-50 border-l-4 border-amber-400 p-3 mb-2 text-xs text-amber-800 rounded-r-lg">
+                        <strong>Regla de Tres Inversa:</strong> Més hores diàries = menys dies necessaris. Multiplica dies per hores inicials i divideix per les noves hores.
+                    </div>
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Gestió de Projectes (Temps)</span>
+                    <p class="font-medium text-slate-700">8. Un equip triga <strong>60 dies</strong> treballant <strong>8 hores al dia</strong> en un projecte. Quants dies necessitaran si treballen <strong>6 hores al dia</strong>?</p>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
+                        <textarea class="w-full h-16 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Hores totals / 6 hores..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <input type="number" id="ans8" placeholder="Nombre de dies" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(8, 80)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <span id="feedback8" class="font-bold text-sm"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= PART 3: ESTADÍSTICA I PROBABILITAT ================= -->
+            <div>
+                <h2 class="text-2xl font-black text-indigo-900 border-b-2 border-indigo-200 pb-2 mb-6">Part 3: Estadística i Probabilitat</h2>
+
+                <!-- Exercici 3.1 -->
+                <div class="bg-slate-50 p-5 rounded-xl border mb-6 space-y-4">
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Probabilitat (Urna sense reposició)</span>
+                    <p class="font-medium text-slate-700">9. En una urna hi ha <strong>10 boles: 3 blanques, 4 negres i 3 vermelles</strong>. Si s'extreuen dues boles <strong>sense reposició</strong>, quina és la probabilitat en fracció (o percentatge) d'extreure una bola blanca seguida d'una negra? Introdueix el percentatge arrodonit (ex: 15 per 15%).</p>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
+                        <textarea class="w-full h-16 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="(3/10) * (4/9)..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <input type="number" step="0.1" id="ans9" placeholder="% de probabilitat" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(9, 13.3)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <span id="feedback9" class="font-bold text-sm"></span>
+                    </div>
+                </div>
+
+                <!-- Exercici 3.2 -->
+                <div class="bg-slate-50 p-5 rounded-xl border mb-6 space-y-4">
+                    <span class="text-xs font-bold text-indigo-600 uppercase">Estadística (Rang de vendes)</span>
+                    <p class="font-medium text-slate-700">10. Tenint en compte les dades del mes on les vendes màximes van ser <strong>352 unitats</strong> (dia 15) i les mínimes <strong>137 unitats</strong> (dia 2), quina és la <strong>diferència (rang)</strong> entre les vendes més altes i les més baixes?</p>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
+                        <textarea class="w-full h-16 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Resta màxim menys mínim..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <input type="number" id="ans10" placeholder="Diferència" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(10, 215)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <span id="feedback10" class="font-bold text-sm"></span>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
 
-    <!-- Script de validació -->
+    <!-- Script de validació intel·ligent amb marge de tolerància per decimals -->
     <script>
         function checkAnswer(id, correctValue) {
             const userInputValue = parseFloat(document.getElementById('ans' + id).value);
@@ -112,7 +225,9 @@
                 return;
             }
 
-            if (userInputValue === correctValue) {
+            // Acceptar un petit marge d'error (0.1) per temes d'arrodoniment de decimals
+            const tolerance = 0.15;
+            if (Math.abs(userInputValue - correctValue) <= tolerance) {
                 feedbackElement.textContent = "🎉 Excel·lent! Resposta correcta.";
                 feedbackElement.className = "font-bold text-sm text-emerald-600";
             } else {
