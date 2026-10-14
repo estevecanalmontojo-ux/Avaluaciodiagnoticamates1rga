@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pla de Reforç de Matemàtiques - Gestió Administrativa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+        
+        <!-- Header -->
+        <div class="bg-indigo-600 text-white p-6 md:p-8">
+            <span class="bg-indigo-500 text-xs uppercase tracking-wider px-3 py-1 rounded-full font-semibold">1r Gestió Administrativa</span>
+            <h1 class="text-2xl md:text-3xl font-bold mt-2">Pla de Reforç i Autopràctica de Matemàtiques</h1>
+            <p class="text-indigo-100 mt-1">Repassa els conceptes clau de l'avaluació diagnòstica amb exercicis pràctics i autocorrecció.</p>
+        </div>
+
+        <div class="p-6 md:p-8 space-y-10">
+
+            <!-- BLOQ 1: PERCENTATGES INVERSOS -->
+            <section class="border-b pb-8">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="bg-indigo-100 text-indigo-700 font-bold w-8 h-8 rounded-full flex items-center justify-center">1</span>
+                    <h2 class="text-xl font-bold text-slate-700">Càlcul Invers de Percentatges (Preus sense IVA)</h2>
+                </div>
+                
+                <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-4 text-sm text-amber-800 rounded-r-lg">
+                    <strong>Atenció al error comú:</strong> Per treure l'IVA d'un producte <strong>no s'ha de restar el 21%</strong> directament sobre el total. S'ha de dividir el preu total entre $1,21$ (ja que el preu inclou $1 + 0,21$).
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-xl border space-y-4">
+                    <p class="font-medium text-slate-700">Exercici 1: Un article té un preu de <strong>121 euros</strong> (IVA inclòs del 21%). Quin era el preu del producte sense IVA?</p>
+                    
+                    <!-- Llibreta d'apunts per a l'alumne -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament (pista per a tu):</label>
+                        <textarea class="w-full h-20 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Escriu aquí com has plantejat la regla de tres o l'operació..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <input type="number" id="ans1" placeholder="El teu resultat (€)" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(1, 100)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <span id="feedback1" class="font-bold text-sm"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLOQ 2: PROPORCIONALITAT INVERSA -->
+            <section class="border-b pb-8">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="bg-indigo-100 text-indigo-700 font-bold w-8 h-8 rounded-full flex items-center justify-center">2</span>
+                    <h2 class="text-xl font-bold text-slate-700">Regla de Tres Inversa (Gestió de Temps)</h2>
+                </div>
+                
+                <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-4 text-sm text-amber-800 rounded-r-lg">
+                    <strong>Recorda:</strong> Si treballem menys hores al dia, necessitarem <strong>més dies</strong> per acabar el mateix projecte (magnituds inversament proporcionals). Multiplica les hores totals inicials i divideix per les noves hores.
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-xl border space-y-4">
+                    <p class="font-medium text-slate-700">Exercici 2: Un equip triga <strong>60 dies</strong> treballant <strong>8 hores al dia</strong> en completar un projecte. Quants dies necessitaran si només treballen <strong>6 hores al dia</strong>?</p>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
+                        <textarea class="w-full h-20 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Apunta aquí el càlcul d'hores totals..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <input type="number" id="ans2" placeholder="Nombre de dies" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(2, 80)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <span id="feedback2" class="font-bold text-sm"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BLOQ 3: ESTADÍSTICA BÀSICA -->
+            <section class="pb-4">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span class="bg-indigo-100 text-indigo-700 font-bold w-8 h-8 rounded-full flex items-center justify-center">3</span>
+                    <h2 class="text-xl font-bold text-slate-700">Mitjana Aritmètica de Vendes</h2>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-xl border space-y-4">
+                    <p class="font-medium text-slate-700">Exercici 3: Durant 4 dies d'una setmana, una botiga ha registrat les següents vendes diàries: <strong>120, 150, 200 i 130</strong> unitats. Quina és la mitjana de vendes diàries?</p>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Llibreta de càlcul / Raonament:</label>
+                        <textarea class="w-full h-20 p-3 text-sm border rounded-lg bg-yellow-50 focus:outline-none focus:ring-2 focus:ring-indigo-400" placeholder="Suma total i divisió..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-3">
+                        <input type="number" id="ans3" placeholder="Mitjana obtinguda" class="w-full sm:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <button onclick="checkAnswer(3, 150)" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2 rounded-lg transition">Comprovar</button>
+                        <span id="feedback3" class="font-bold text-sm"></span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Script de validació -->
+    <script>
+        function checkAnswer(id, correctValue) {
+            const userInputValue = parseFloat(document.getElementById('ans' + id).value);
+            const feedbackElement = document.getElementById('feedback' + id);
+
+            if (isNaN(userInputValue)) {
+                feedbackElement.textContent = "⚠️ Si us plau, introdueix un número.";
+                feedbackElement.className = "font-bold text-sm text-amber-600";
+                return;
+            }
+
+            if (userInputValue === correctValue) {
+                feedbackElement.textContent = "🎉 Excel·lent! Resposta correcta.";
+                feedbackElement.className = "font-bold text-sm text-emerald-600";
+            } else {
+                feedbackElement.textContent = "❌ Torna-ho a provar. Revisa el plantejament a la llibreta.";
+                feedbackElement.className = "font-bold text-sm text-rose-600";
+            }
+        }
+    </script>
+</body>
+</html>
